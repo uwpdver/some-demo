@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <style>
+      .pretty-border {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        position: relative;
+        
+        margin: auto;
+        border: solid 10px transparent; /* 关键，将尺寸撑开，让底部的背景图像能被显示*/
+        border-radius: 18px; /* 内部的圆角 */ 
+        width: 100px;
+        padding: 10px;
+        
+        background-color: orange; /* 自定义背景，可以是图像或颜色*/ 
+        background-clip: padding-box; /* 关键，让背景图像不延伸到边框*/
+        
+        color: white;
+      }
+
+      .pretty-border::before {
+        content: '';
+
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: -1; /* 成为背景 */
+
+        margin: -10px; /* 关键, 要与边框宽度一致 */
+        background: linear-gradient(to bottom, orange, red); /* 边框的渐变效果 */ 
+
+        border-radius: 15px; /* 边框圆角要比内部圆角略小 */ 
+      }
+    </style>
+  </head>
+  <body>
+    <div class="pretty-border">some content</div>
+  </body>
+</html>
