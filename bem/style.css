@@ -7,26 +7,70 @@
 
 .c-card {
   display: flex;
-  border: 2px solid #fff;
-  border-radius: 3rem;
-  height: 20rem;
+  border: 0.4rem solid #fff;
+  border-radius: 5rem;
   padding: 3rem 2rem;
 
   color: #fff;
+}
+
+.c-card__text-wrapper {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.c-card__title {
+  overflow: hidden;
+
+  margin-bottom: 1rem;
+
+  font-size: 3rem;
+  font-weight: bold;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c-card__desc {
+  overflow: hidden;
+
+  flex: 1 1 7.5rem;
+
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+
+  font-size: 2.5rem;
+  line-height: 1.5;
+  word-break: break-all;
+  text-overflow: ellipsis;
+}
+
+.c-card__source {
+  overflow: hidden;
+
+  margin-top: 1rem;
+
+  font-size: 2rem;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c-card__image-wrapper {
+  overflow: hidden;
+
+  flex-shrink: 0;
+
+  margin-left: 2rem;
+  border-radius: 3rem;
+  width: 16rem;
+  height: 16rem;
 }
 
 .c-card__avatar-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-
-.c-card__avatar-wrapper {
-  border-radius: 50%;
-  width: 48px;
-  height: 48px;
-}
-
-.c-card__text {
-  font-size: 2rem;
 }
