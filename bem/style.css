@@ -6,12 +6,40 @@
 }
 
 .c-card {
+  position: relative;
+  transition: transform 1s ease-in-out;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+.c-card__face {
+  position: absolute;
+  left: 0;
+  right: 0;;
+
   display: flex;
   border: 0.4rem solid #fff;
   border-radius: 5rem;
   padding: 3rem 2rem;
 
   color: #fff;
+  background-color: #000;
+
+  transition: transform 1s;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.c-card__face--front {
+  z-index: 2;
+}
+
+.c-card__face--back {
+  transform: rotateY(180deg);
+}
+
+.is-flipped {
+  transform: rotateY(180deg) translate(0, 10vh);
 }
 
 .c-card__text-wrapper {
@@ -45,6 +73,12 @@
   line-height: 1.5;
   word-break: break-all;
   text-overflow: ellipsis;
+}
+
+.c-card__desc--back {
+  overflow: unset;
+  flex-basis: auto;
+  -webkit-line-clamp: unset;
 }
 
 .c-card__source {
