@@ -1,0 +1,32 @@
+.l-page {
+  min-height: 100vh;
+  padding: 1rem;
+
+  background-color: #000;
+}
+
+.c-card {
+  display: flex;
+  border: 2px solid #fff;
+  border-radius: 3rem;
+  height: 20rem;
+  padding: 3rem 2rem;
+
+  color: #fff;
+}
+
+.c-card__avatar-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.c-card__avatar-wrapper {
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+}
+
+.c-card__text {
+  font-size: 2rem;
+}
