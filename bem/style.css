@@ -7,15 +7,17 @@
 
 .c-card {
   position: relative;
-  transition: transform 1s ease-in-out;
+
+  display: grid;
+
+  transition: transform 550ms ease-in-out;
   transform-style: preserve-3d;
   cursor: pointer;
 }
 
 .c-card__face {
-  position: absolute;
-  left: 0;
-  right: 0;;
+  grid-column: 1;
+  grid-row: 1;
 
   display: flex;
   border: 0.4rem solid #fff;
@@ -35,16 +37,25 @@
 }
 
 .c-card__face--back {
+  position: absolute;
+  left: 0;
+  right: 0;
+
   transform: rotateY(180deg);
 }
 
+/* .c-card__face--back.c-card__face--flipped {
+  position: static;
+} */
+
 .is-flipped {
-  transform: rotateY(180deg) translate(0, 10vh);
+  transform: rotateY(180deg);
 }
 
 .c-card__text-wrapper {
   overflow: hidden;
   display: flex;
+  flex: 1;
   flex-direction: column;
 }
 
